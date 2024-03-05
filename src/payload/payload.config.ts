@@ -73,6 +73,10 @@ export default buildConfig({
         },
       }
     },
+    meta: {
+      titleSuffix: '- TH',
+      favicon: '/favicon.ico',
+    },
   },
   editor: slateEditor({}), // editor-config
   // database-adapter-config-start
