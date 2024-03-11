@@ -1,12 +1,14 @@
 'use client'
 
-import { usePathname } from 'next/navigation'
-import { inclusions, noHeaderFooterUrls } from '../../../constants'
-import classes from './index.module.scss'
-import { Gutter } from '../../Gutter'
 import Image from 'next/image'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
+
 import { Footer } from '../../../../payload/payload-types'
+import { inclusions, noHeaderFooterUrls } from '../../../constants'
+import { Gutter } from '../../Gutter'
+
+import classes from './index.module.scss'
 
 const FooterComponent = ({ footer }: { footer: Footer }) => {
   const pathname = usePathname()
