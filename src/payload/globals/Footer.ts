@@ -12,7 +12,6 @@ export const Footer: GlobalConfig = {
       name: 'copyright',
       label: 'Copyright',
       type: 'text',
-      defaultValue: () => '@2024 <Company name> All rights reserved',
       admin: {
         description: 'Add or update copyright text for company here',
       },
