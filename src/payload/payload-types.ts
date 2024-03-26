@@ -494,6 +494,7 @@ export interface Header {
 }
 export interface Footer {
   id: string;
+  copyright?: string | null;
   navItems?:
     | {
         link: {
