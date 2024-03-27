@@ -510,6 +510,19 @@ export interface Footer {
         id?: string | null;
       }[]
     | null;
+  navItemz?:
+    | {
+        Type?: ('internalLink' | 'customUrl') | null;
+        openInNewTab?: boolean | null;
+        purchase?: {
+          relationTo: 'pages';
+          value: string | Page;
+        } | null;
+        customUrl?: string | null;
+        label: string;
+        id?: string | null;
+      }[]
+    | null;
   updatedAt?: string | null;
   createdAt?: string | null;
 }

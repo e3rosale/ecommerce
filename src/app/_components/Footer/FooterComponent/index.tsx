@@ -9,10 +9,11 @@ import { inclusions, noHeaderFooterUrls } from '../../../constants'
 import { Gutter } from '../../Gutter'
 
 import classes from './index.module.scss'
+import { Button } from '../../Button'
 
 const FooterComponent = ({ footer }: { footer: Footer }) => {
   const pathname = usePathname()
-
+  const navItems = footer.navItems ?? []
   return (
     <footer className={noHeaderFooterUrls.includes(pathname) ? classes.hide : ''}>
       <Gutter>
@@ -38,7 +39,24 @@ const FooterComponent = ({ footer }: { footer: Footer }) => {
             <Link href={'/'}>
               <Image src={'/logo-white.svg'} alt="logo" width={170} height={50} />
             </Link>
-            <p>{footer?.copyright}</p>
+            <p>{footer.copyright}</p>
+            <div className={classes.socialLinks}>
+              {navItems.map(item => {
+                const icon = ''
+
+                return (
+                  <Button
+                    key={item.link.url}
+                    el="link"
+                    href={item.link.url}
+                    newTab
+                    className={classes.socialLinkItem}
+                  >
+                    {item.link.label}
+                  </Button>
+                )
+              })}
+            </div>
           </div>
         </Gutter>
       </div>
