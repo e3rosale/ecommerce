@@ -6950,29 +6950,33 @@ enum Footer_NavItems_Link_Reference_RelationTo {
 union Footer_NavItems_Link_Reference = Page
 
 type Footer_NavItemz {
-  Type: Footer_NavItemz_Type
-  openInNewTab: Boolean
-  purchase: Footer_NavItemz_Purchase_Relationship
-  customUrl: String
-  label: String
+  link: Footer_NavItemz_Link
   id: String
 }
 
-enum Footer_NavItemz_Type {
+type Footer_NavItemz_Link {
+  Type: Footer_NavItemz_Link_Type
+  openInNewTab: Boolean
+  reference: Footer_NavItemz_Link_Reference_Relationship
+  customUrl: String
+  label: String
+}
+
+enum Footer_NavItemz_Link_Type {
   internalLink
   customUrl
 }
 
-type Footer_NavItemz_Purchase_Relationship {
-  relationTo: Footer_NavItemz_Purchase_RelationTo
-  value: Footer_NavItemz_Purchase
+type Footer_NavItemz_Link_Reference_Relationship {
+  relationTo: Footer_NavItemz_Link_Reference_RelationTo
+  value: Footer_NavItemz_Link_Reference
 }
 
-enum Footer_NavItemz_Purchase_RelationTo {
+enum Footer_NavItemz_Link_Reference_RelationTo {
   pages
 }
 
-union Footer_NavItemz_Purchase = Page
+union Footer_NavItemz_Link_Reference = Page
 
 type footerDocAccess {
   fields: FooterDocAccessFields
@@ -7235,126 +7239,154 @@ type FooterDocAccessFields_navItemz_Delete {
 }
 
 type FooterDocAccessFields_navItemz_Fields {
-  Type: FooterDocAccessFields_navItemz_Type
-  openInNewTab: FooterDocAccessFields_navItemz_openInNewTab
-  purchase: FooterDocAccessFields_navItemz_purchase
-  customUrl: FooterDocAccessFields_navItemz_customUrl
-  label: FooterDocAccessFields_navItemz_label
+  link: FooterDocAccessFields_navItemz_link
   id: FooterDocAccessFields_navItemz_id
 }
 
-type FooterDocAccessFields_navItemz_Type {
-  create: FooterDocAccessFields_navItemz_Type_Create
-  read: FooterDocAccessFields_navItemz_Type_Read
-  update: FooterDocAccessFields_navItemz_Type_Update
-  delete: FooterDocAccessFields_navItemz_Type_Delete
+type FooterDocAccessFields_navItemz_link {
+  create: FooterDocAccessFields_navItemz_link_Create
+  read: FooterDocAccessFields_navItemz_link_Read
+  update: FooterDocAccessFields_navItemz_link_Update
+  delete: FooterDocAccessFields_navItemz_link_Delete
+  fields: FooterDocAccessFields_navItemz_link_Fields
 }
 
-type FooterDocAccessFields_navItemz_Type_Create {
+type FooterDocAccessFields_navItemz_link_Create {
   permission: Boolean!
 }
 
-type FooterDocAccessFields_navItemz_Type_Read {
+type FooterDocAccessFields_navItemz_link_Read {
   permission: Boolean!
 }
 
-type FooterDocAccessFields_navItemz_Type_Update {
+type FooterDocAccessFields_navItemz_link_Update {
   permission: Boolean!
 }
 
-type FooterDocAccessFields_navItemz_Type_Delete {
+type FooterDocAccessFields_navItemz_link_Delete {
   permission: Boolean!
 }
 
-type FooterDocAccessFields_navItemz_openInNewTab {
-  create: FooterDocAccessFields_navItemz_openInNewTab_Create
-  read: FooterDocAccessFields_navItemz_openInNewTab_Read
-  update: FooterDocAccessFields_navItemz_openInNewTab_Update
-  delete: FooterDocAccessFields_navItemz_openInNewTab_Delete
+type FooterDocAccessFields_navItemz_link_Fields {
+  Type: FooterDocAccessFields_navItemz_link_Type
+  openInNewTab: FooterDocAccessFields_navItemz_link_openInNewTab
+  reference: FooterDocAccessFields_navItemz_link_reference
+  customUrl: FooterDocAccessFields_navItemz_link_customUrl
+  label: FooterDocAccessFields_navItemz_link_label
 }
 
-type FooterDocAccessFields_navItemz_openInNewTab_Create {
+type FooterDocAccessFields_navItemz_link_Type {
+  create: FooterDocAccessFields_navItemz_link_Type_Create
+  read: FooterDocAccessFields_navItemz_link_Type_Read
+  update: FooterDocAccessFields_navItemz_link_Type_Update
+  delete: FooterDocAccessFields_navItemz_link_Type_Delete
+}
+
+type FooterDocAccessFields_navItemz_link_Type_Create {
   permission: Boolean!
 }
 
-type FooterDocAccessFields_navItemz_openInNewTab_Read {
+type FooterDocAccessFields_navItemz_link_Type_Read {
   permission: Boolean!
 }
 
-type FooterDocAccessFields_navItemz_openInNewTab_Update {
+type FooterDocAccessFields_navItemz_link_Type_Update {
   permission: Boolean!
 }
 
-type FooterDocAccessFields_navItemz_openInNewTab_Delete {
+type FooterDocAccessFields_navItemz_link_Type_Delete {
   permission: Boolean!
 }
 
-type FooterDocAccessFields_navItemz_purchase {
-  create: FooterDocAccessFields_navItemz_purchase_Create
-  read: FooterDocAccessFields_navItemz_purchase_Read
-  update: FooterDocAccessFields_navItemz_purchase_Update
-  delete: FooterDocAccessFields_navItemz_purchase_Delete
+type FooterDocAccessFields_navItemz_link_openInNewTab {
+  create: FooterDocAccessFields_navItemz_link_openInNewTab_Create
+  read: FooterDocAccessFields_navItemz_link_openInNewTab_Read
+  update: FooterDocAccessFields_navItemz_link_openInNewTab_Update
+  delete: FooterDocAccessFields_navItemz_link_openInNewTab_Delete
 }
 
-type FooterDocAccessFields_navItemz_purchase_Create {
+type FooterDocAccessFields_navItemz_link_openInNewTab_Create {
   permission: Boolean!
 }
 
-type FooterDocAccessFields_navItemz_purchase_Read {
+type FooterDocAccessFields_navItemz_link_openInNewTab_Read {
   permission: Boolean!
 }
 
-type FooterDocAccessFields_navItemz_purchase_Update {
+type FooterDocAccessFields_navItemz_link_openInNewTab_Update {
   permission: Boolean!
 }
 
-type FooterDocAccessFields_navItemz_purchase_Delete {
+type FooterDocAccessFields_navItemz_link_openInNewTab_Delete {
   permission: Boolean!
 }
 
-type FooterDocAccessFields_navItemz_customUrl {
-  create: FooterDocAccessFields_navItemz_customUrl_Create
-  read: FooterDocAccessFields_navItemz_customUrl_Read
-  update: FooterDocAccessFields_navItemz_customUrl_Update
-  delete: FooterDocAccessFields_navItemz_customUrl_Delete
+type FooterDocAccessFields_navItemz_link_reference {
+  create: FooterDocAccessFields_navItemz_link_reference_Create
+  read: FooterDocAccessFields_navItemz_link_reference_Read
+  update: FooterDocAccessFields_navItemz_link_reference_Update
+  delete: FooterDocAccessFields_navItemz_link_reference_Delete
 }
 
-type FooterDocAccessFields_navItemz_customUrl_Create {
+type FooterDocAccessFields_navItemz_link_reference_Create {
   permission: Boolean!
 }
 
-type FooterDocAccessFields_navItemz_customUrl_Read {
+type FooterDocAccessFields_navItemz_link_reference_Read {
   permission: Boolean!
 }
 
-type FooterDocAccessFields_navItemz_customUrl_Update {
+type FooterDocAccessFields_navItemz_link_reference_Update {
   permission: Boolean!
 }
 
-type FooterDocAccessFields_navItemz_customUrl_Delete {
+type FooterDocAccessFields_navItemz_link_reference_Delete {
   permission: Boolean!
 }
 
-type FooterDocAccessFields_navItemz_label {
-  create: FooterDocAccessFields_navItemz_label_Create
-  read: FooterDocAccessFields_navItemz_label_Read
-  update: FooterDocAccessFields_navItemz_label_Update
-  delete: FooterDocAccessFields_navItemz_label_Delete
+type FooterDocAccessFields_navItemz_link_customUrl {
+  create: FooterDocAccessFields_navItemz_link_customUrl_Create
+  read: FooterDocAccessFields_navItemz_link_customUrl_Read
+  update: FooterDocAccessFields_navItemz_link_customUrl_Update
+  delete: FooterDocAccessFields_navItemz_link_customUrl_Delete
 }
 
-type FooterDocAccessFields_navItemz_label_Create {
+type FooterDocAccessFields_navItemz_link_customUrl_Create {
   permission: Boolean!
 }
 
-type FooterDocAccessFields_navItemz_label_Read {
+type FooterDocAccessFields_navItemz_link_customUrl_Read {
   permission: Boolean!
 }
 
-type FooterDocAccessFields_navItemz_label_Update {
+type FooterDocAccessFields_navItemz_link_customUrl_Update {
   permission: Boolean!
 }
 
-type FooterDocAccessFields_navItemz_label_Delete {
+type FooterDocAccessFields_navItemz_link_customUrl_Delete {
+  permission: Boolean!
+}
+
+type FooterDocAccessFields_navItemz_link_label {
+  create: FooterDocAccessFields_navItemz_link_label_Create
+  read: FooterDocAccessFields_navItemz_link_label_Read
+  update: FooterDocAccessFields_navItemz_link_label_Update
+  delete: FooterDocAccessFields_navItemz_link_label_Delete
+}
+
+type FooterDocAccessFields_navItemz_link_label_Create {
+  permission: Boolean!
+}
+
+type FooterDocAccessFields_navItemz_link_label_Read {
+  permission: Boolean!
+}
+
+type FooterDocAccessFields_navItemz_link_label_Update {
+  permission: Boolean!
+}
+
+type FooterDocAccessFields_navItemz_link_label_Delete {
   permission: Boolean!
 }
 
@@ -10801,126 +10833,154 @@ type FooterFields_navItemz_Delete {
 }
 
 type FooterFields_navItemz_Fields {
-  Type: FooterFields_navItemz_Type
-  openInNewTab: FooterFields_navItemz_openInNewTab
-  purchase: FooterFields_navItemz_purchase
-  customUrl: FooterFields_navItemz_customUrl
-  label: FooterFields_navItemz_label
+  link: FooterFields_navItemz_link
   id: FooterFields_navItemz_id
 }
 
-type FooterFields_navItemz_Type {
-  create: FooterFields_navItemz_Type_Create
-  read: FooterFields_navItemz_Type_Read
-  update: FooterFields_navItemz_Type_Update
-  delete: FooterFields_navItemz_Type_Delete
+type FooterFields_navItemz_link {
+  create: FooterFields_navItemz_link_Create
+  read: FooterFields_navItemz_link_Read
+  update: FooterFields_navItemz_link_Update
+  delete: FooterFields_navItemz_link_Delete
+  fields: FooterFields_navItemz_link_Fields
 }
 
-type FooterFields_navItemz_Type_Create {
+type FooterFields_navItemz_link_Create {
   permission: Boolean!
 }
 
-type FooterFields_navItemz_Type_Read {
+type FooterFields_navItemz_link_Read {
   permission: Boolean!
 }
 
-type FooterFields_navItemz_Type_Update {
+type FooterFields_navItemz_link_Update {
   permission: Boolean!
 }
 
-type FooterFields_navItemz_Type_Delete {
+type FooterFields_navItemz_link_Delete {
   permission: Boolean!
 }
 
-type FooterFields_navItemz_openInNewTab {
-  create: FooterFields_navItemz_openInNewTab_Create
-  read: FooterFields_navItemz_openInNewTab_Read
-  update: FooterFields_navItemz_openInNewTab_Update
-  delete: FooterFields_navItemz_openInNewTab_Delete
+type FooterFields_navItemz_link_Fields {
+  Type: FooterFields_navItemz_link_Type
+  openInNewTab: FooterFields_navItemz_link_openInNewTab
+  reference: FooterFields_navItemz_link_reference
+  customUrl: FooterFields_navItemz_link_customUrl
+  label: FooterFields_navItemz_link_label
 }
 
-type FooterFields_navItemz_openInNewTab_Create {
+type FooterFields_navItemz_link_Type {
+  create: FooterFields_navItemz_link_Type_Create
+  read: FooterFields_navItemz_link_Type_Read
+  update: FooterFields_navItemz_link_Type_Update
+  delete: FooterFields_navItemz_link_Type_Delete
+}
+
+type FooterFields_navItemz_link_Type_Create {
   permission: Boolean!
 }
 
-type FooterFields_navItemz_openInNewTab_Read {
+type FooterFields_navItemz_link_Type_Read {
   permission: Boolean!
 }
 
-type FooterFields_navItemz_openInNewTab_Update {
+type FooterFields_navItemz_link_Type_Update {
   permission: Boolean!
 }
 
-type FooterFields_navItemz_openInNewTab_Delete {
+type FooterFields_navItemz_link_Type_Delete {
   permission: Boolean!
 }
 
-type FooterFields_navItemz_purchase {
-  create: FooterFields_navItemz_purchase_Create
-  read: FooterFields_navItemz_purchase_Read
-  update: FooterFields_navItemz_purchase_Update
-  delete: FooterFields_navItemz_purchase_Delete
+type FooterFields_navItemz_link_openInNewTab {
+  create: FooterFields_navItemz_link_openInNewTab_Create
+  read: FooterFields_navItemz_link_openInNewTab_Read
+  update: FooterFields_navItemz_link_openInNewTab_Update
+  delete: FooterFields_navItemz_link_openInNewTab_Delete
 }
 
-type FooterFields_navItemz_purchase_Create {
+type FooterFields_navItemz_link_openInNewTab_Create {
   permission: Boolean!
 }
 
-type FooterFields_navItemz_purchase_Read {
+type FooterFields_navItemz_link_openInNewTab_Read {
   permission: Boolean!
 }
 
-type FooterFields_navItemz_purchase_Update {
+type FooterFields_navItemz_link_openInNewTab_Update {
   permission: Boolean!
 }
 
-type FooterFields_navItemz_purchase_Delete {
+type FooterFields_navItemz_link_openInNewTab_Delete {
   permission: Boolean!
 }
 
-type FooterFields_navItemz_customUrl {
-  create: FooterFields_navItemz_customUrl_Create
-  read: FooterFields_navItemz_customUrl_Read
-  update: FooterFields_navItemz_customUrl_Update
-  delete: FooterFields_navItemz_customUrl_Delete
+type FooterFields_navItemz_link_reference {
+  create: FooterFields_navItemz_link_reference_Create
+  read: FooterFields_navItemz_link_reference_Read
+  update: FooterFields_navItemz_link_reference_Update
+  delete: FooterFields_navItemz_link_reference_Delete
 }
 
-type FooterFields_navItemz_customUrl_Create {
+type FooterFields_navItemz_link_reference_Create {
   permission: Boolean!
 }
 
-type FooterFields_navItemz_customUrl_Read {
+type FooterFields_navItemz_link_reference_Read {
   permission: Boolean!
 }
 
-type FooterFields_navItemz_customUrl_Update {
+type FooterFields_navItemz_link_reference_Update {
   permission: Boolean!
 }
 
-type FooterFields_navItemz_customUrl_Delete {
+type FooterFields_navItemz_link_reference_Delete {
   permission: Boolean!
 }
 
-type FooterFields_navItemz_label {
-  create: FooterFields_navItemz_label_Create
-  read: FooterFields_navItemz_label_Read
-  update: FooterFields_navItemz_label_Update
-  delete: FooterFields_navItemz_label_Delete
+type FooterFields_navItemz_link_customUrl {
+  create: FooterFields_navItemz_link_customUrl_Create
+  read: FooterFields_navItemz_link_customUrl_Read
+  update: FooterFields_navItemz_link_customUrl_Update
+  delete: FooterFields_navItemz_link_customUrl_Delete
 }
 
-type FooterFields_navItemz_label_Create {
+type FooterFields_navItemz_link_customUrl_Create {
   permission: Boolean!
 }
 
-type FooterFields_navItemz_label_Read {
+type FooterFields_navItemz_link_customUrl_Read {
   permission: Boolean!
 }
 
-type FooterFields_navItemz_label_Update {
+type FooterFields_navItemz_link_customUrl_Update {
   permission: Boolean!
 }
 
-type FooterFields_navItemz_label_Delete {
+type FooterFields_navItemz_link_customUrl_Delete {
+  permission: Boolean!
+}
+
+type FooterFields_navItemz_link_label {
+  create: FooterFields_navItemz_link_label_Create
+  read: FooterFields_navItemz_link_label_Read
+  update: FooterFields_navItemz_link_label_Update
+  delete: FooterFields_navItemz_link_label_Delete
+}
+
+type FooterFields_navItemz_link_label_Create {
+  permission: Boolean!
+}
+
+type FooterFields_navItemz_link_label_Read {
+  permission: Boolean!
+}
+
+type FooterFields_navItemz_link_label_Update {
+  permission: Boolean!
+}
+
+type FooterFields_navItemz_link_label_Delete {
   permission: Boolean!
 }
 
@@ -11555,19 +11615,23 @@ enum Footer_NavItems_Link_ReferenceRelationshipInputRelationTo {
 }
 
 input mutationFooter_NavItemzInput {
-  Type: String
-  openInNewTab: Boolean
-  purchase: Footer_NavItemz_PurchaseRelationshipInput
-  customUrl: String
-  label: String!
+  link: mutationFooter_NavItemz_LinkInput
   id: String
 }
 
-input Footer_NavItemz_PurchaseRelationshipInput {
-  relationTo: Footer_NavItemz_PurchaseRelationshipInputRelationTo
+input mutationFooter_NavItemz_LinkInput {
+  Type: String
+  openInNewTab: Boolean
+  reference: Footer_NavItemz_Link_ReferenceRelationshipInput
+  customUrl: String
+  label: String!
+}
+
+input Footer_NavItemz_Link_ReferenceRelationshipInput {
+  relationTo: Footer_NavItemz_Link_ReferenceRelationshipInputRelationTo
   value: JSON
 }
 
-enum Footer_NavItemz_PurchaseRelationshipInputRelationTo {
+enum Footer_NavItemz_Link_ReferenceRelationshipInputRelationTo {
   pages
 }

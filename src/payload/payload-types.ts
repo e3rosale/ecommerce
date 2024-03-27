@@ -512,14 +512,16 @@ export interface Footer {
     | null;
   navItemz?:
     | {
-        Type?: ('internalLink' | 'customUrl') | null;
-        openInNewTab?: boolean | null;
-        purchase?: {
-          relationTo: 'pages';
-          value: string | Page;
-        } | null;
-        customUrl?: string | null;
-        label: string;
+        link: {
+          Type?: ('internalLink' | 'customUrl') | null;
+          openInNewTab?: boolean | null;
+          reference?: {
+            relationTo: 'pages';
+            value: string | Page;
+          } | null;
+          customUrl?: string | null;
+          label: string;
+        };
         id?: string | null;
       }[]
     | null;
