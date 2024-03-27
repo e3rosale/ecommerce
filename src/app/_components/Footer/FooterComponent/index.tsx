@@ -6,10 +6,10 @@ import { usePathname } from 'next/navigation'
 
 import { Footer } from '../../../../payload/payload-types'
 import { inclusions, noHeaderFooterUrls } from '../../../constants'
+import { Button } from '../../Button'
 import { Gutter } from '../../Gutter'
 
 import classes from './index.module.scss'
-import { Button } from '../../Button'
 
 const FooterComponent = ({ footer }: { footer: Footer }) => {
   const pathname = usePathname()

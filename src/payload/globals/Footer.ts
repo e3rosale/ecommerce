@@ -62,7 +62,7 @@ export const Footer: GlobalConfig = {
               required: true,
               admin: {
                 width: '30%',
-                condition: (data, siblingData, { user }) => {
+                condition: (_, siblingData) => {
                   if (siblingData.Type === 'internalLink') {
                     return true
                   }
@@ -78,7 +78,7 @@ export const Footer: GlobalConfig = {
               required: true,
               admin: {
                 width: '30%',
-                condition: (data, siblingData, { user }) => {
+                condition: (_, siblingData) => {
                   if (siblingData.Type === 'customUrl') {
                     return true
                   }
