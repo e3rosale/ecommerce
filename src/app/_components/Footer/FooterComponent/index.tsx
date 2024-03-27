@@ -13,7 +13,7 @@ import classes from './index.module.scss'
 
 const FooterComponent = ({ footer }: { footer: Footer }) => {
   const pathname = usePathname()
-  const navItems = footer.navItems ?? []
+  const navItems = footer?.navItems ?? []
   return (
     <footer className={noHeaderFooterUrls.includes(pathname) ? classes.hide : ''}>
       <Gutter>

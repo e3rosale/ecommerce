@@ -33,70 +33,89 @@ export const Footer: GlobalConfig = {
       maxRows: 6,
       fields: [
         {
-          type: 'row',
+          type: 'group',
+          name: 'link',
           fields: [
             {
-              name: 'Type',
-              type: 'radio',
-              options: [
-                { label: 'Internal link', value: 'internalLink' },
-                { label: 'Custom URL', value: 'customUrl' },
+              type: 'row',
+              fields: [
+                {
+                  name: 'Type',
+                  type: 'radio',
+                  options: [
+                    { label: 'Internal link', value: 'internalLink' },
+                    { label: 'Custom URL', value: 'customUrl' },
+                  ],
+                  defaultValue: 'customUrl',
+                  admin: {
+                    layout: 'horizontal',
+                    width: '50%',
+                  },
+                },
+                {
+                  name: 'openInNewTab',
+                  type: 'checkbox',
+                  label: 'Open in new tab',
+                  admin: {
+                    width: '50%',
+                    style: {
+                      alignSelf: 'flex-end',
+                    },
+                  },
+                },
               ],
-              defaultValue: 'customUrl',
             },
             {
-              name: 'openInNewTab',
-              type: 'checkbox',
-              label: 'Open in new tab',
+              type: 'row',
+              fields: [
+                {
+                  name: 'reference',
+                  label: 'Document to link to',
+                  type: 'relationship',
+                  relationTo: ['pages'],
+                  required: true,
+                  admin: {
+                    width: '35%',
+                    condition: (_, siblingData) => {
+                      if (siblingData.Type === 'internalLink') {
+                        return true
+                      }
+
+                      return false
+                    },
+                  },
+                },
+                {
+                  name: 'customUrl',
+                  type: 'text',
+                  label: 'Custom URL',
+                  required: true,
+                  admin: {
+                    width: '35%',
+                    condition: (_, siblingData) => {
+                      if (siblingData.Type === 'customUrl') {
+                        return true
+                      }
+
+                      return false
+                    },
+                  },
+                },
+                {
+                  name: 'label',
+                  type: 'text',
+                  label: 'Label',
+                  required: true,
+                  admin: {
+                    width: '65%',
+                  },
+                },
+              ],
             },
           ],
-        },
-        {
-          type: 'row',
-          fields: [
-            {
-              name: 'purchase',
-              label: 'Document to link to',
-              type: 'relationship',
-              relationTo: ['pages'],
-              required: true,
-              admin: {
-                width: '30%',
-                condition: (_, siblingData) => {
-                  if (siblingData.Type === 'internalLink') {
-                    return true
-                  }
-
-                  return false
-                },
-              },
-            },
-            {
-              name: 'customUrl',
-              type: 'text',
-              label: 'Custom URL',
-              required: true,
-              admin: {
-                width: '30%',
-                condition: (_, siblingData) => {
-                  if (siblingData.Type === 'customUrl') {
-                    return true
-                  }
-
-                  return false
-                },
-              },
-            },
-            {
-              name: 'label',
-              type: 'text',
-              label: 'Label',
-              required: true,
-              admin: {
-                width: '70%',
-              },
-            },
-          ],
+          // admin: {
+          //   hideGutter: true,
+          // },
         },
       ],
     },
