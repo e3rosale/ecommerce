@@ -17,4 +17,8 @@ export const LINK_FIELDS = ({ disableAppearance, disableLabel }: Args = {}): str
       }
     }
   }
+  icon {
+    url
+    alt
+  }
 }`
