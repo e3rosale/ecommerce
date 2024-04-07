@@ -47,17 +47,26 @@
   h2 {
     font-size: 70px;
     margin: 32px 0;
+    width: 60%;
+
+    @include large-break {
+      width: 75%;
+    }
 
     @include mid-break {
+      width: 60%;
       font-size: 48px;
       margin: 24px 0;
       white-space: wrap;
     }
 
     @include small-break {
-      width: 70%;
       font-size: 36px;
       margin: 8px 0;
+    }
+
+    @include extra-small-break {
+      width: 70%;
     }
   }
 
