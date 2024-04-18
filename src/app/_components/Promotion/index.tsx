@@ -1,5 +1,6 @@
 'use client'
 import { useEffect, useState } from 'react'
+
 import classes from './index.module.scss'
 
 interface IStatBoxTime {
