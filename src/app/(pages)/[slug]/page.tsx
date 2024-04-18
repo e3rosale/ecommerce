@@ -20,6 +20,9 @@ import { generateMeta } from '../../_utilities/generateMeta'
 export const dynamic = 'force-dynamic'
 
 import classes from './index.module.scss'
+import { Gutter } from '../../_components/Gutter'
+import Categories from '../../_components/Categories'
+import { Promotion } from '../../_components/Promotion'
 
 export default async function Page({ params: { slug = 'home' } }) {
   const { isEnabled: isDraftMode } = draftMode()
@@ -57,11 +60,23 @@ export default async function Page({ params: { slug = 'home' } }) {
 
   return (
     <React.Fragment>
-      <Hero {...hero} />
-      <Blocks
-        blocks={layout}
-        disableTopPadding={!hero || hero?.type === 'none' || hero?.type === 'lowImpact'}
-      />
+      {slug === 'home' ? (
+        <section>
+          <Hero {...hero} />
+          <Gutter className={classes.home}>
+            <Categories categories={categories} />
+            <Promotion />
+          </Gutter>
+        </section>
+      ) : (
+        <>
+          <Hero {...hero} />
+          <Blocks
+            blocks={layout}
+            disableTopPadding={!hero || hero?.type === 'none' || hero?.type === 'lowImpact'}
+          />
+        </>
+      )}
     </React.Fragment>
   )
 }
