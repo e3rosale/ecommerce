@@ -1,4 +1,4 @@
-import { ChangeEvent, FC, useState } from 'react'
+import { FC } from 'react'
 
 import classes from './index.module.scss'
 
@@ -10,10 +10,7 @@ interface CheckboxProps {
 }
 
 export const Checkbox: FC<CheckboxProps> = ({ label, value, isSelected, onClickHandler }) => {
-  const [isChecked, setIsChecked] = useState(isSelected)
-
-  const handleCheckboxChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setIsChecked(e.target.checked)
+  const handleCheckboxChange = () => {
     // Add category id to categoryFilters
     onClickHandler(value)
   }
@@ -22,7 +19,7 @@ export const Checkbox: FC<CheckboxProps> = ({ label, value, isSelected, onClickH
     <label className={classes.checkboxWrapper}>
       <input
         type="checkbox"
-        checked={isChecked}
+        checked={isSelected}
         onChange={handleCheckboxChange}
         className={classes.checkbox}
       />
