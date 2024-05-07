@@ -24,6 +24,9 @@ export const ArchiveBlock: React.FC<
     categories,
   } = props
 
+  // delete
+  const lim = 10
+
   return (
     <div id={`block-${id}`} className={classes.archiveBlock}>
       {introContent && (
