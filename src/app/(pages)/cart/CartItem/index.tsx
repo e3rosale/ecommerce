@@ -1,4 +1,5 @@
 import { useState } from 'react'
+
 import classes from './index.module.scss'
 
 const CartItem = ({ product, title, metaImage, qty, addItemToCart }) => {
