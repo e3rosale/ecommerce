@@ -1,0 +1,187 @@
+Seed the project with data. In the admin dashboard, modify:
+
+[Footer]
+
+Copyright should be:
+@2024 Tech Haven All rights reserved
+
+There should be three nav items:
+
+1. Link should be custom URL with open in new tab checked, and 
+Custom URL should be:
+https://www.facebook.com
+
+Label should be:
+facebook
+
+Select facebook.svg file from footer folder
+
+Alt section should be:
+facebook
+
+2. Link should be custom URL with open in new tab checked, and
+Custom URL should be:
+https://www.instagram.com
+
+Label should be:
+instagram
+
+Select instagram.svg file from footer folder
+
+Alt Section should be:
+instagram
+
+3. Link should be custom URL with open in new tab checked, and
+Custom URL should be:
+https://www.twitter.com
+
+Label should be:
+twitter
+
+Select twitter.svg file from footer folder
+
+Alt section should be:
+twitter
+
+--------------------------------------------
+
+[Pages]
+
+Home:
+  Title should be:
+  Home
+
+  SEO Title should be:
+  Payload E-Commerce Template
+
+  Description should be:
+  An open-source e-commerce store built with Payload and Next.js.
+
+  Meta Image should be empty
+
+  Slug should be:
+  home
+
+  In the Hero tab section, Hero dropdown type should be:
+    Custom Hero
+
+    Custom Hero Rich Text should be:
+      Unleash Innovation in Every Byte.
+      Explore a World of Cutting-Edge Tech
+      With the first line being an h2 element
+
+    Internal link to products should have label:
+    Shop now
+    and with primary button appearance
+
+    Select hero-1.png image from Hero folder
+
+    Alt section should be:
+    hero
+
+  Remove all content section and replace with a blank content layout
+
+Products:
+  Title should be:
+  Products
+
+  SEO Title should be:
+  Shop all products
+
+  Description should be:
+  Shop everything from goods and services to digital assets and gated content.
+
+  Meta Image should be empty
+
+  Slug should be: 
+  products
+
+  In the Hero tab section, Hero dropdown type should be:
+    None
+
+    Make sure to remove all content from the rich text section
+
+  In the Content tab section, Layout should be of type Archive Block:
+    Remove all intro content
+
+    Populate By:
+    Collection
+
+    Collections To Show:
+    Products
+
+    Limit:
+    9
+    
+--------------------------------------------
+
+[Categories]
+
+Create categories 
+
+1. Select laptops-category.png image from categories folder
+  Alt section should be:
+  laptops
+
+  Title should be:
+  Laptops
+
+2. Select phones-category.png image from the categories folder
+  Alt section should be:
+  phones
+
+  Title should be:
+  Phones
+
+3. Select watches-category.png image from the categories folder
+  Alt section should be:
+  watches
+
+  Title should be:
+  Watches
+
+--------------------------------------------
+
+[Products]
+
+Create products
+
+1. Upload new media for Meta Image. Select apple-watch-series-9-aluminum.png from products folder.
+
+Alt section should be:
+apple watch 9
+
+Title and SEO Title should be:
+Apple Watch Series 9 Solo Loop (Aluminum) - Midnight
+
+Price should be: 
+$499.00
+
+Description should be:
+Introducing the Apple Watch Series 9 Solo Loop in Midnight Aluminum. Elevate your fitness and style with seamless design, advance health features, and the convenience of the Solo Loop band.
+
+In the Product Details section, Stripe Product dropdown should be:
+Apple Watch Series 9 Solo Loop (Aluminum) - Midnight
+
+On the aside, the Categories dropdown should be:
+Watches
+
+2. Upload new media for Meta Image. Select apple-iphone-15-pro-1tb-blue-titanium.png from products folder.
+
+Alt section should be:
+apple iphone 15
+
+Title and SEO Title should be:
+Apple iPhone 15 Pro (1TB) - Blue Titanium
+
+Price should be:
+$ 999.00
+
+Description should be:
+Dive into luxury with the Apple iPhone 15 Pro in Blue Titanium. Unleash powerful performance, stunning visuals, and abundant storage with 1TB, redefining excellence in smartphone technology.
+
+In the Product Details section, Strip Product dropdown should be:
+Apple iPhone 15 Pro (1TB) - Blue Titanium
+
+On the aside, the Categories dropdown should be:
+Phones
