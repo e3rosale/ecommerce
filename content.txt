@@ -74,6 +74,7 @@ Home:
     Shop now
     and with primary button appearance
 
+    Media:
     Select hero-1.png image from Hero folder
 
     Alt section should be:
