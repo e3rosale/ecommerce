@@ -184,4 +184,4 @@ In the Product Details section, Strip Product dropdown should be:
 Apple iPhone 15 Pro (1TB) - Blue Titanium
 
 On the aside, the Categories dropdown should be:
-Phones
+Phones 
